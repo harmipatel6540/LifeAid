@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LifeAid – Voice Welfare Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="slider">
+  <div class="slide active"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+</div>
+
+<div class="box">
+
+<h2 id="title">🎤 LifeAid – Voice Welfare Assistant</h2>
+
+<select onchange="changeLang(this.value)">
+  <option value="en">English</option>
+  <option value="hi">Hindi</option>
+  <option value="gu">Gujarati</option>
+</select>
+
+<label id="ageL">Age</label>
+<input id="age" type="number">
+
+<label id="incomeL">Income</label>
+<input id="income" type="number">
+
+<label id="statusL">Status</label>
+<select id="status">
+  <option value="employed">Employed</option>
+  <option value="unemployed">Unemployed</option>
+</select>
+
+<button onclick="checkScheme()">Check Scheme</button>
+<button class="voice" onclick="startVoice()">🎤 Speak</button>
+
+<p id="result"></p>
+
+<button onclick="downloadPDF()">📄 Download PDF</button>
+
+<!-- Updated Find Office Buttons -->
+<button onclick="findOfficeBasic()">🗺 Find Office (Basic)</button>
+<button onclick="findOfficeWithLocation()">🗺 Find Office (Nearby)</button>
+
+<!-- DOCUMENT UPLOAD -->
+<div class="docs">
+<h4>📄 Optional Documents</h4>
+<label>Aadhaar Card (Upload)</label>
+<input type="file" id="aadhaarFile" accept=".pdf,.jpg,.png">
+<label>PAN Card (Upload)</label>
+<input type="file" id="panFile" accept=".pdf,.jpg,.png">
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<button onclick="showAdmin()">📊 Admin Dashboard</button>
+<div id="admin" class="admin">
+<p>Total Users: <span id="users">1</span></p>
+<p>Eligible: <span id="eligible">0</span></p>
+<p>Not Eligible: <span id="notEligible">0</span></p>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
